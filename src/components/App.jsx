@@ -4,26 +4,31 @@ import Statistics from './Statistics';
 import Section from './Section';
 import Notification from './Notification';
 
+// начальное состояние свойства 'state'
 export class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
-
-  onLeaveFeedback = e => {
-    const { name } = e.target;
+  //обработчик события 'evt' для  фиксации клика
+  onLeaveFeedback = evt => {
+    const { name } = evt.target;
     this.setState(prevState => ({
       [name]: prevState[name] + 1,
     }));
   };
-  countTotalFeedback = () => {
+  // вычисление суммы фиксации клика
+  totalFeedback = () => {
     const { good, neutral, bad } = this.state;
+
     return good + neutral + bad;
   };
-  countPositiveFeedbackPercentage = () => {
+  //вычисления процента положительной"
+  positiveFeedbackPercentage = () => {
     const { good } = this.state;
-    const totalFeedback = this.countTotalFeedback();
+    const totalFeedback = this.totalFeedback();
+
     return Math.round((good * 100) / totalFeedback) + '%';
   };
   render() {
@@ -47,8 +52,8 @@ export class App extends Component {
               good={good}
               neutral={neutral}
               bad={bad}
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
+              total={this.totalFeedback()}
+              positivePercentage={this.positiveFeedbackPercentage()}
             />
           )}
         </Section>

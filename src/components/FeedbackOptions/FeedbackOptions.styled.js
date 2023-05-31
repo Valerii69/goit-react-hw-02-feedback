@@ -5,6 +5,7 @@ export const OptionsList = styled.ul`
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  margin-left: 55px;
 `;
 
 export const Button = styled.button`
@@ -15,7 +16,7 @@ export const Button = styled.button`
   border-radius: 3px;
   border: 1px solid palevioletred;
   color: palevioletred;
-  margin: 0 1em;
+  margin: 0 0.25em;
   padding: 0.25em 1em;
   cursor: pointer;
 `;
