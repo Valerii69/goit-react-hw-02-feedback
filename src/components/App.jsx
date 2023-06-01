@@ -12,25 +12,27 @@ export class App extends Component {
     bad: 0,
   };
   //обработчик события 'evt' для  фиксации клика
-  onLeaveFeedback = evt => {
-    const { name } = evt.target;
-    this.setState(prevState => ({
-      [name]: prevState[name] + 1,
-    }));
+  onLeaveFeedback = event => {
+    const object = event.target.name;
+    this.setState(state => ({ [object]: state[object] + 1 }));
+    // console.log(bill);
   };
-  // вычисление суммы фиксации клика
+
+  // вычисление суммы  кликов
   totalFeedback = () => {
     const { good, neutral, bad } = this.state;
 
     return good + neutral + bad;
   };
-  //вычисления процента положительной"
+  //вычисления процента положительной оценки
   positiveFeedbackPercentage = () => {
     const { good } = this.state;
     const totalFeedback = this.totalFeedback();
 
     return Math.round((good * 100) / totalFeedback) + '%';
   };
+
+  //рендер данных по клику
   render() {
     const { good, neutral, bad } = this.state;
     const isEmptyList = !(good + neutral + bad);
@@ -39,7 +41,7 @@ export class App extends Component {
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            onOptions={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>

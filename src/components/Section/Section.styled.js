@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SectionContainer = styled.section`
   width: 400px;
+  height: auto;
 `;
 
 export const Title = styled.h2`
