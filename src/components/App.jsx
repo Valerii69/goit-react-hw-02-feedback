@@ -11,6 +11,7 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
+
   //обработчик события 'evt' для  фиксации клика
   onLeaveFeedback = event => {
     const object = event.target.name;

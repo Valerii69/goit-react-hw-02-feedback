@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   const statList = [
-    { statistLine: good, title: 'Good' },
-    { statistLine: neutral, title: 'Neutral' },
-    { statistLine: bad, title: 'Bad' },
-    { statistLine: total, title: 'Total' },
-    { statistLine: positivePercentage, title: 'Positive feedbacks' },
+    { statLine: good, title: 'Good' },
+    { statLine: neutral, title: 'Neutral' },
+    { statLine: bad, title: 'Bad' },
+    { statLine: total, title: 'Total' },
+    { statLine: positivePercentage, title: 'Positive feedbacks' },
   ];
 
   return (
     <StatisticsList>
-      {statList.map(({ title, statistLine }) => (
+      {statList.map(({ statLine, title }) => (
         <StatisticsItem key={title}>
           <p>
-            {title} : <span>{statistLine}</span>
+            {title} : <span>{statLine}</span>
           </p>
         </StatisticsItem>
       ))}
