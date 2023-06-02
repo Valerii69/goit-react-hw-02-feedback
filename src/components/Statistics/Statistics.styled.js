@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { colors } from '../utils/vars';
 export const StatisticsList = styled.ul`
   margin-top: 20px;
   margin-left: 55px;
@@ -12,5 +12,5 @@ export const StatisticsList = styled.ul`
 export const StatisticsItem = styled.li`
   font-size: 18px;
   font-weight: 500;
-  color: #160b0f;
+  color: ${colors.boxShadow};
 `;
