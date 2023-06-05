@@ -27,6 +27,7 @@ export const Button = styled.button`
   color: ${colors.background};
   box-shadow: ${colors.boxShadow};
   transition: ${colors.boxShadow};
+  text-transform: capitalize;
   :hover {
     color: ${colors.textSecond};
     font-size: 14px;
